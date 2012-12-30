@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Chrome Number Tabs</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        table{
+            width: 270px;
+            margin: 0 auto;
+        }
+        td{
+            height: 50px;
+            font-size: 20px;
+        }
+        span {
+            background-color: #bdbdbd;
+            color: black;
+            width: 50px;
+            float: right;
+            display: block;
+            text-align: center;
+        }
+        
+        #save{
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<script src="api.js"></script>
+<script src="options.js"></script>
+
+<body>
+<h1>Chrome Number Tabs extension</h1>
+<h3>Number style:</h3>
+<table>
+    <tr>
+        <td><input type="radio" name="numberStyle" value="1"></td>
+        <td> Sharp Style : <span>#1</span></label></td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="numberStyle" value="2"></td>
+        <td>Square Style : <span>[1]</span></td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="numberStyle" value="3"></td>
+        <td>Parentheses Style :<span>  (1)</span></td>
+    </tr>
+</table>
+<label></label>
+<label></label>
+
+<div style="clear: both"></div>
+<div id="status"></div>
+<button id="save">Save</button>
+</body>
+</html>
