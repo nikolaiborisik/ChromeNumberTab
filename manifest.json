@@ -1,18 +1,13 @@
 {
-    "name": "Chrome Number Tabs",
-    "version": "1.0",
-    "manifest_version": 2,
-    "description": "Extensions to add tab index to the tab title.",
-    "options_page": "options.html",
-    "permissions" : [
-        "tabs",
-        "http://*/*",
-        "https://*/*"
+    "name"             : "Chrome Number Tabs",
+    "version"          : "1.0",
+    "manifest_version" : 2,
+    "description"      : "Extensions to add tab index to the tab title.",
+    "options_page"     : "options.html",
+    "permissions"      : [
+        "tabs", "http://*/*", "https://*/*"
     ],
-    "background": {
+    "background"       : {
         "page" : "background.html"
-    },
-    "browser_action": {
     }
-
 }

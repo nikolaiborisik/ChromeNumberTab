@@ -4,14 +4,15 @@
         PARENTHESES_STYLE = '3';
 
     window.ChromeNumberTabsApi = {
-        refreshTabsNumber:function () {
+        refreshTabsNumber : function () {
             chrome.tabs.getAllInWindow(null, function (tabs) {
 
                 for (var i = 0; i < tabs.length; i++) {
                     var t = tabs[i],
                         title = t.title,
-                        isShowIndex = t.index < 8 || i === (tabs.length -1),
-                        index = i === (tabs.length -1) && t.index >= 8 ?  9 : t.index + 1;
+                        isShowIndex = t.index < 8 || i === (tabs.length - 1),
+                        index = i === (tabs.length - 1) && t.index >= 8 ? 9 : t.index + 1;
+
                     title = title.replace(/^#\d/, "")
                         .replace(/^\[\d\]/, "")
                         .replace(/^\(\d\)/, "");
@@ -37,7 +38,7 @@
             return localStorage.getItem('ChromeNumberTabs_style') || SHARP_STYLE;
         },
 
-        setNumberStyle:function (style) {
+        setNumberStyle : function (style) {
             return localStorage.setItem('ChromeNumberTabs_style', style);
         }
     };
