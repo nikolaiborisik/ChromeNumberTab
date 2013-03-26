@@ -1,17 +1,21 @@
 (function () {
     var SHARP_STYLE = '1',
         SQUARE_STYLE = '2',
-        PARENTHESES_STYLE = '3';
+        PARENTHESES_STYLE = '3',
+
+        //only 1 -8 and last tab has hotkey
+        TABS_WITH_HOTKEY = 8,
+        LAST_TAB_HOTKEY = 9;
 
     window.ChromeNumberTabsApi = {
         refreshTabsNumber : function () {
             chrome.tabs.getAllInWindow(null, function (tabs) {
 
-                for (var i = 0; i < tabs.length; i++) {
+                for (var i = 0, len = tabs.length; i < len; i++) {
                     var t = tabs[i],
                         title = t.title,
-                        isShowIndex = t.index < 8 || i === (tabs.length - 1),
-                        index = i === (tabs.length - 1) && t.index >= 8 ? 9 : t.index + 1;
+                        isShowIndex = t.index < TABS_WITH_HOTKEY || i === (tabs.length - 1),
+                        index = i === (tabs.length - 1) && t.index >= TABS_WITH_HOTKEY ? LAST_TAB_HOTKEY : t.index + 1;
 
                     title = title.replace(/^#\d/, "")
                         .replace(/^\[\d\]/, "")
