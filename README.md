@@ -1,4 +1,4 @@
-Chrome Number Tab
+Chrome Number Tabs
 ===============
 
 Chrome extensions to add tab index to the tab title.
